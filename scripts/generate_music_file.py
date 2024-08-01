@@ -3,7 +3,12 @@
 #from pacman_melody import melody, tempo
 #from zelda_melody import melody, tempo
 #from starwars_melody import melody, tempo
-from imperialmarch_melody import melody, tempo
+#from imperialmarch_melody import melody, tempo
+#from mario_melody import melody, tempo
+#from asabranca_melody import melody, tempo
+#from nokia_melody import melody, tempo
+from takeonme_melody import melody, tempo
+
 
 def main(music_name):
     file = open(f"../music/{music_name}.hex", "w")
@@ -38,4 +43,4 @@ def main(music_name):
     file.close()
 
 if __name__ == "__main__":
-    main("imperialmarch")
+    main("takeonme")
