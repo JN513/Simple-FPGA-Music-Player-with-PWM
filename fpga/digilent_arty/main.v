@@ -14,7 +14,7 @@ end
 
 Player #(
     .CLK_FREQ(50000000),
-    .MEMORY_FILE("../../music/tetris.hex"),
+    .MEMORY_FILE("../../music/zelda.hex"),
     .MEMORY_SIZE(4096)
 ) Player_inst (
     .clk(clk_50mhz),

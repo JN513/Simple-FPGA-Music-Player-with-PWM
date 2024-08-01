@@ -1,30 +1,7 @@
-
-melody = [
-    659, 4, 494, 8, 523, 8, 587, 4, 523, 8, 494, 8,
-    440, 4, 440, 8, 523, 8, 659, 4, 587, 8, 523, 8,
-    494, 6, 523, 8, 587, 4, 659, 4,
-    523, 4, 440, 4, 440, 8, 440, 4, 494, 8, 523, 8,
-    587, 6, 698, 8, 880, 4, 784, 8, 698, 8,
-    659, 6, 523, 8, 659, 4, 587, 8, 523, 8,
-    494, 4, 494, 8, 523, 8, 587, 4, 659, 4,
-    523, 4, 440, 4, 440, 4, 0, 4,
-    659, 4, 494, 8, 523, 8, 587, 4, 523, 8, 494, 8,
-    440, 4, 440, 8, 523, 8, 659, 4, 587, 8, 523, 8,
-    494, 6, 523, 8, 587, 4, 659, 4,
-    523, 4, 440, 4, 440, 8, 440, 4, 494, 8, 523, 8,
-    587, 6, 698, 8, 880, 4, 784, 8, 698, 8,
-    659, 6, 523, 8, 659, 4, 587, 8, 523, 8,
-    494, 4, 494, 8, 523, 8, 587, 4, 659, 4,
-    523, 4, 440, 4, 440, 4, 0, 4,
-    659, 2, 523, 2,
-    587, 2, 494, 2,
-    523, 2, 440, 2,
-    415, 2, 494, 4, 0, 8,
-    659, 2, 523, 2,
-    587, 2, 494, 2,
-    523, 4, 659, 4, 880, 2,
-    831, 2,
-]
+#from doom_melody import melody, tempo
+#from testris_melody import melody, tempo
+#from pacman_melody import melody, tempo
+from zelda_melody import melody, tempo
 
 def main(music_name):
     file = open(f"../music/{music_name}.hex", "w")
@@ -37,8 +14,17 @@ def main(music_name):
         note = melody[i]
         duration = melody[i + 1]
 
-        duration = 1666 // duration
+        mul = 0
+        if duration < 0:
+            mul = 1
+            duration = -duration
+
+        duration = ((60000 * 4) / tempo) // duration
         duration = duration * 0.9
+
+        if mul:
+            duration = duration * 1.5
+
         duration = int(duration)
 
         duration = duration << 21
@@ -50,4 +36,4 @@ def main(music_name):
     file.close()
 
 if __name__ == "__main__":
-    main("tetris")
+    main("zelda")

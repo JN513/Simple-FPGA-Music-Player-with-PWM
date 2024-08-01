@@ -57,6 +57,7 @@ always @(posedge clk) begin
                 internal_reset <= 1'b1;
                 state <= LOAD_HEADER;
                 delay_counter <= 0;
+                address <= 0;
             end
 
             LOAD_HEADER: begin
