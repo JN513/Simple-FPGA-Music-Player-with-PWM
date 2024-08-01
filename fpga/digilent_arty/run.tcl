@@ -1,4 +1,7 @@
 read_verilog "main.v"
+read_verilog ../../src/player.v
+read_verilog ../../src/pwm_control.v
+read_verilog ../../src/pwm.v
 
 read_xdc "digilent_arty.xdc"
 
