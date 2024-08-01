@@ -1,2 +1,3 @@
 build/
 *.pyc
+fpga/digilent_arty/clockInfo.txt

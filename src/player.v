@@ -32,12 +32,6 @@ wire pwm_reset;
 assign pwm_reset = reset | internal_reset;
 
 initial begin
-    `ifdef __ICARUS__
-        for (i = 0; i < (MEMORY_SIZE/4)-1; i = i + 1) begin
-            memory[i] = 32'h00000000; 
-        end
-    `endif
-
     if(MEMORY_FILE != "") begin
         $readmemh(MEMORY_FILE, memory, 0, (MEMORY_SIZE/4) - 1);
     end
@@ -68,6 +62,7 @@ always @(posedge clk) begin
             LOAD_HEADER: begin
                 size <= memory[address];
                 address <= address + 1'b1;
+                state <= LOAD_NOTE;
             end
 
             LOAD_NOTE: begin
