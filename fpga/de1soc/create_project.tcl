@@ -11,7 +11,10 @@ set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY build
 
 # Adiciona arquivos Verilog ao projeto
-set_global_assignment -name VERILOG_FILE $proj_dir/main.v
+set_global_assignment -name VERILOG_FILE main.v
+set_global_assignment -name VERILOG_FILE "../../src/player.v"
+set_global_assignment -name VERILOG_FILE "../../src/pwm_control.v"
+set_global_assignment -name VERILOG_FILE "../../src/pwm.v"
 
 # Atribuições de pinos
 set_location_assignment PIN_AF14 -to clk
@@ -41,6 +44,8 @@ set_location_assignment PIN_AA14 -to btn[0]
 set_location_assignment PIN_AA15 -to btn[1]
 set_location_assignment PIN_W15  -to btn[2]
 set_location_assignment PIN_Y16  -to btn[3]
+
+set_location_assignment PIN_AC18 -to pwm_out
 
 #set_location_assignment PIN_B25 -to uart_tx
 #set_location_assignment PIN_C25 -to uart_rx
