@@ -9,6 +9,7 @@ module Player #(
 );
 
 localparam MS = CLK_FREQ / 1000;
+
 localparam INIT         = 3'b000;
 localparam LOAD_HEADER  = 3'b001;
 localparam LOAD_NOTE    = 3'b010;

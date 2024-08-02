@@ -1,5 +1,7 @@
 # Simple FPGA Music Player with PWM
 
+![FPGA com alto falante](docs/fpga.jpg)
+
 Este projeto tem como objetivo principal o desenvolvimento de um Music Player utilizando FPGA (Field-Programmable Gate Array) e PWM (Pulse Width Modulation). Através deste workshop, os participantes terão a oportunidade de criar um módulo de hardware capaz de gerar um sinal PWM, que será integrado a uma estrutura de hardware para permitir a reprodução de músicas.
 
 ## Dúvidas e Sugestões
